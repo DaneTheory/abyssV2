@@ -1,0 +1,7 @@
+node_modules
+npm-debug.log
+
+# vim
+*.swp
+
+# TODO: Create more robust .gitignore file

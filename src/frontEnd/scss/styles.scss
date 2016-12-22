@@ -1,0 +1,74 @@
+//*****//
+// Styles
+  // => styles.scss
+    //
+    //    Abyss SCSS archecture, design, and implementation were inspired by the entity-component-system (ECS),
+    //    React/Redux, the 7-1 SASS pattern, and plenty of previous experience. ECS is a functional development //    pattern that favors composition over inheritance; meaning flexible component modularity that avoids
+    //    rigid hierarchies. For Abyss's SCSS, this translates to components, entities, and templates. Components
+    //    represent micro-level HTML elements, such as <div> or <button> tags. Entities can be understood as
+    //    macro-levl HTML elements, such as <header> or <footer> tags. Like macro and micro HTML elements behave,
+    //    entities are composed of components. Templates refer to a speciffic instance of a page/view within
+    //    the application, such as home.html, about.html, or 404.html. Templates exist as a composition of
+    //    entities. While the ECS pattern does involve state and property management, React/Redux are more
+    //    generally understood and more likely to be used in conjunction with something like Abyss. With that in
+    //    mind, states have been included to the SCSS archecture. States represent conditional modular style
+    //    components that focus on what the application should look like depending on it's state. An example
+    //    being an application that has a different design implementation intended for users who are logged in
+    //    versus users who are logged out. Abyss SCSS also includes props. Props serve to style anything within
+    //    the ECS pattern, but in a highly flexible manner and are interchangable within one another. Like
+    //    stateless components in React/Redux, props are pure modular components. They should not require anything
+    //    but themselves to create the intended style. Examples of this include animation keyframes, traditional
+    //    .show and .hide utility classes, and mixins for managing things like simple property change on <button>
+    //    hover state. Simple properties in this example would be something like color. More complex, structurally
+    //    focussed properties can be added here, like display: inline-block for our <button> example. However,
+    //    it's important to note once more that props are meant to be as "stateless" as possible. This means that
+    //    for our <button> example, explecit selector properties such as padding, font-size, or border-width
+    //    should be decoupled from the component (i.e padding: $button-padding, font-size: $button-font-size, //    and border-width: $button-border-width). "Stateless" explicit selectors should be written as a
+    //    %placeholder and can easily compliment a mixin such as the <button> mixin mentioned earlier for hover
+    //    state. When used together, props provide a nice clean way to build components. In our <button> example,
+    //    a component can be created which references a <button> HTML element's class name. Then the mixin for //    hovering can be added to the class name via an @include statement and the loosely structured %button
+    //    can be added via @extend statement.
+    //
+    //
+    //
+    //
+    //    The styles file serves as the single point of encapsulation for every
+    //    individual SCSS composite file defined within their respective folder.
+    //    All SCSS composites defined here (via @import) are transpiled into a
+    //    a single CSS file which will be used for all application styling.
+    //
+//*****//
+
+
+//== BASE ==//
+// Global application styles. (i.e. normalize, variables, typography)
+@import 'base/composite';
+
+//== PROPS ==//
+// Includes stylistic variants, helpers/utilities, "stateless" selector rules,
+// highly flexible application styles. (i.e. mixins, functions, animations)
+@import 'props/composite';
+
+//== COMPONENTS ==//
+// Micro-level HTML element styles. (i.e buttons, lists, divs)
+@import 'components/composite';
+
+//== ENTITIES ==//
+// Macro-level HTML element styles. (i.e header, footer, sidebar)
+@import 'entities/composite';
+
+//== TEMPLATES ==//
+//  Composition of entity collections for page/view speciffic styles. (i.e home.html, contact.html, 404.html)
+@import 'templates/composite';
+
+//== STATES ==//
+//  Conditionally rendered styles. (i.e index.html if user is logged in or logged out)
+@import 'states/composite';
+
+//== VENDOR ==//
+//  3rd party styles. (i.e. Bootstrap, Foundation, Skeleton)
+@import 'vendor/composite';
+
+//== SANDBOX ==//
+//  Quick and dirty styles created on the fly during development and refactored or deleted before production.
+@import 'sandbox/composite';
