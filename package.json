@@ -3,23 +3,21 @@
   "version": "0.0.1",
   "description": "TODO",
   "keywords": [
-    "TODO"
+    "full stack",
+    "boilerplate",
+    "es6",
+    "isomorphic"
   ],
   "repository": {
     "type": "git",
-    "url": "TODO"
-  },
-  "main": "",
-  "scripts": {
-    "": ""
+    "url": "https://github.com/DaneTheory/abyssV2.git"
   },
   "author": "Branden Dane",
-  "license": "",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.14.0"
   },
   "devDependencies": {
-    "": "",
     "autoprefixer": "^6.5.4",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
